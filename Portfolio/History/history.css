@@ -1,0 +1,305 @@
+:root {
+    --fg-clr-normal: #111;
+    --fg-clr-gray: #3a3a3a;
+    --fg-clr-link: rgb(7, 78, 118);
+    --fg-clr-accent: rgb(0, 166, 255);
+    --fg-clr-white: #fff;
+    
+    --bg-clr-header: rgb(231, 15, 15);
+    --bg-clr-blue: rgb(253, 208, 210);
+    --bg-clr-offwhite: honeydew;
+
+    --line-clr-black: #111;
+
+    --img-width-small: 150px;
+    --img-width-medium: 300px;
+    --img-width-tiny: 50px;
+    --img-width-zoom: 30rem;
+    /* Jag ändrade om lite gran här för att bilderna skulle vara de storlek jag behövde. */
+
+    --padding-tight: .4rem;
+    --padding-normal: 5rem;
+
+    --ft-weight-400: 400;
+    --ft-weight-700: 700;
+}
+
+*,
+*::before,
+*::after {                                            
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: var(--ft-weight-400);
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 3rem;
+}
+
+body {
+    background: var(--bg-clr-offwhite);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    width: 100%;
+    background: var(--bg-clr-header);
+}
+
+.primary-navigation  {
+    width: 100%;
+    background: var(--bg-clr-blue);
+    height: 3rem;
+    position: sticky;
+    top:0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    /* Jag satte länkarna i mitten och satte z index ett efterom den hamnade bakom texten annars, 
+    sticky och top gör så den följer med*/
+}
+
+.footer {
+    background: var(--bg-clr-blue);
+    margin-top: auto;
+    /* Margin finns där för att stoppa bilden på att lige precis vid footer. */
+}
+.footer-navigation {
+ margin-left: 3rem;
+ /* länkarna låg för mycket till vänster enligt mig så jag flyttade ut dem */
+}
+
+.inline-image {
+    object-fit: cover;
+}
+
+
+.inline-image-small {
+    width: var(--img-width-small);
+}
+
+.inline-image-medium {
+    width: var(--img-width-medium);
+}
+.noborder {
+    border: none;
+}
+
+p {
+    padding: var(--padding-tight);
+    color: var(--fg-clr-gray);
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-link {
+    color: var(--fg-clr-link)
+}
+
+.nav-link:visited {
+    color: var(--fg-clr-link)
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: var(--fg-clr-accent);
+}
+
+img {
+    transition: 70ms;
+    border: 1px solid black;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.all{
+    position: relative;
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--fg-clr-gray);
+    background-color: var(--bg-clr-blue);
+    translate: 0 -100%;
+    transition: translate 150ms ease-in-out;
+    padding: .75rem;
+    text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:hover {
+    color: var(--fg-clr-normal);
+    text-decoration: underline;
+    translate: 0;
+}
+
+.scale {
+    width: 60%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+    height:fit-content
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-clr-blue);
+    margin-bottom: 1rem;
+}
+
+legend {
+    text-align: center;
+    font-weight: bold;
+}
+.btn-send {
+    margin: 2%;
+}
+
+.paperplease {
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.inputbox {
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgb(230, 250, 232);
+    padding-left: 1%;
+    padding-right: 1%;
+    
+
+}
+
+
+@media (max-width: 600px){
+    .header-caption {
+        font-weight: var(--ft-weight-700);
+        font-size: 25px;
+        color: var(--fg-clr-white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin-inline: auto; 
+        height: 5rem;
+    }
+    .main-content {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    .primary-navigation__links {
+        font-size: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        width: 90%;
+        margin-inline: auto; 
+    
+    }
+    
+}
+
+
+@media (min-width: 600px) and (max-width:1080px) {
+    .header-caption {
+        font-weight: var(--ft-weight-700);
+        color: var(--fg-clr-white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-inline: auto; 
+        height: 5rem;
+    }
+
+    .main-content {
+        width: 60%;
+        margin-left: 20%;
+        display: flex;
+        justify-content: center;
+        font-size: larger;
+
+    }
+
+    .primary-navigation__links {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        width: 60%;
+        margin-inline: auto; 
+    
+    }
+    .inline-image-small:hover {
+        scale: 2;
+        z-index: 2;
+    }
+}
+
+@media (min-width: 1080px) {
+    
+    .main-content {
+        width: 60%;
+        margin-left: 20%;
+    }
+    
+    .main-content__text {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 2rem;
+    }
+
+
+    .header-caption {
+        font-weight: var(--ft-weight-700);
+        color: var(--fg-clr-white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        margin-inline: auto; 
+        height: 5rem;
+    }
+
+    .primary-navigation__links {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        width: 60%;
+        margin-inline: auto; 
+
+    
+    }
+    .inline-image-small:hover {
+        scale: 2;
+        z-index: 2;
+    }
+    .scale {
+        width: 100%;
+    }
+}

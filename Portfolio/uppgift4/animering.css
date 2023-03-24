@@ -1,0 +1,67 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper, 
+.rubrik {
+    background-color: honeydew;
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+}
+
+.rubrik {
+    font-size: xx-large;
+}
+
+.wrapper,
+.bilder {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+.spin {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    margin: 50px;
+    transition: 10s;
+}
+
+.spin:hover {
+    background-color: yellow;
+    rotate: 36000deg;
+}
+
+/* the couler of the divider will change to yellow and it will spin 36000 degrees in 10 seconds when hovering.*/
+
+
+.big {
+    height: 100px;
+    width: 100px;
+    background-color: lime;
+    margin: 50px;
+    transition: 1s;
+}
+
+.big:hover {
+    height: 150px;
+    width: 300px;
+    background-color: yellow;
+    translate: 20% 20%;
+}
+
+/* The hight will incres with 50 pixels while the width will increse with 200 pixels stretching it out. 
+it will bocome yellow
+translate makes it move positions
+this will happen in 1 second.*/
+
+.evo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* nothing much to see here. I just centerd the vidio*/
